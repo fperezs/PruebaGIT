@@ -36,9 +36,9 @@ Primero: Abrir GIT Bash haciendo click derecho desde la carpeta del proyecto. Si
 	git config --global user.username "Fernando"
 	git config --global user.email "f.perezs@alumnos.upm.es"
 
-	git log --oneline	% Muestra un listado de todas las copias (commit) del Repositorio Local
+	git log --oneline	% Muestra un listado de todas las copias (commit) y etiquetas (tags) del Repositorio Local, así como sus hashes
 
-	git reset --hard CódigoDeLaCopia	% Restaura el archivo deseado a la versión indicada por su código, y elimina del Repositorio Local todas las copias posteriores a esa
+	git reset --hard HashDeLaCopia	% Restaura el archivo deseado a la versión indicada por su código (hash), y elimina del Repositorio Local todas las copias posteriores a esa
 
 	git commit --amend		% Abre el editor VIM para modificar la descripción del último commit
 		:i		% Para empezar a editar
@@ -64,7 +64,12 @@ Primero: Abrir GIT Bash haciendo click derecho desde la carpeta del proyecto. Si
 	git clone LinkDelRepositorioGitHub.git		% Clona el Repositorio GitHub en la carpeta actual
 
 
-	git tag NombreIdentificativo -m "Descripción"	% Crea la etiqueta en el Repositorio Local. Las etiquetas son útiles para indicar versiones del proyecto, ya que te aparece el proyecto entero para descargar en un .zip
+	git tag NombreIdentificativo -m "Descripción"				% Crea la etiqueta en el Repositorio Local. Las etiquetas son útiles para indicar versiones del proyecto, ya que te aparece el proyecto entero para descargar en un .zip
+	git tag NombreIdentificativo HashDelTag -m "Descripción"	% Para copias distintas a la actual
+
+	git tag		% Muestra una lista con las distintas etiquetas creadas
+
+	git tag -d NombreIdentificativo
 
 	git push --tags		% Sube al Repositorio GitHub las etiquetas creadas
 
