@@ -27,8 +27,10 @@ Primero: Abrir GIT Bash haciendo click derecho desde la carpeta del proyecto. Si
 					%																						 "M" en VERDE los archivos que han sido modificados y están en el Área de Ensayo
 
 	git add Archivo.extensión	% Añade el archivo al Área de Ensayo
+	git add .					% Añade al Área de Ensayo todos los archivos de la carpeta que no estén en el Repositorio Local (sin modificar)
 
-	git commit -m "Descripción de la Actualización"		%  Añade el archivo al Repositorio Local desde el Área de Ensayo, dándole el nombre deseado, que normalmente será una descripción de la actualización.
+	git commit -m "Descripción de la Actualización"		% Añade el archivo al Repositorio Local desde el Área de Ensayo, dándole el nombre deseado, que normalmente será una descripción de la actualización.
+	git commit -am "Descripción de la Actualización"	% Hace el add y el commit de una
 	
 	Si es la primera vez que se hace el commit en el ordenador, pedirá un usuario y un mail:
 	git config --global user.username "Fernando"
@@ -38,8 +40,15 @@ Primero: Abrir GIT Bash haciendo click derecho desde la carpeta del proyecto. Si
 
 	git reset --hard CódigoDeLaCopia	% Restaura el archivo deseado a la versión indicada por su código, y elimina del Repositorio Local todas las copias posteriores a esa
 
-
-
+	git commit --amend	% Abre el editor VIM para modificar la descripción del último commit
+		:i	% Para empezar a editar
+		Se pulsa la tecla suprimir para borrar todo
+		Se pulsa la tecla escape para salir del modo edición
+		:i	% Para volver a editar
+		Se escribe la descripción deseada
+		Se pulsa la tecla enter
+		Se pulsa la tecla escape para salir del modo edición
+		:wq	% Guarda los cambios y sale del editor
 
 
 
