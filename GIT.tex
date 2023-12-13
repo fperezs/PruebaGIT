@@ -1,4 +1,4 @@
-% Comandos de GIT %
+% Comandos de GIT %				% VIDEOTUTORIAL: Curso Git & GitHub, by pildorasinformaticas. https://www.youtube.com/watch?v=ANF1X42_ae4&list=PLU8oAlHdN5BlyaPFiNQcV0xDqy0eR35aU&index=2 %
 
 Primero: Abrir GIT Bash haciendo click derecho desde la carpeta del proyecto. Si no da la opción, abrir GIT Bash directamente desde el buscador y entrar en la carpeta del proyecto
 
@@ -30,7 +30,7 @@ Primero: Abrir GIT Bash haciendo click derecho desde la carpeta del proyecto. Si
 	git add .					% Añade al Área de Ensayo todos los archivos de la carpeta que no estén en el Repositorio Local (sin modificar)
 
 	git commit -m "Descripción de la Actualización"		% Añade el archivo al Repositorio Local desde el Área de Ensayo, dándole el nombre deseado, que normalmente será una descripción de la actualización.
-	git commit -am "Descripción de la Actualización"	% Hace el add y el commit de una
+	git commit -am "Descripción de la Actualización"	% Hace el add y el commit de una, pero solo cuando hay una modificación. Si no se ha hecho nunca el primer add, no sirve
 	
 	Si es la primera vez que se hace el commit en el ordenador, pedirá un usuario y un mail:
 	git config --global user.username "Fernando"
@@ -40,17 +40,23 @@ Primero: Abrir GIT Bash haciendo click derecho desde la carpeta del proyecto. Si
 
 	git reset --hard CódigoDeLaCopia	% Restaura el archivo deseado a la versión indicada por su código, y elimina del Repositorio Local todas las copias posteriores a esa
 
-	git commit --amend	% Abre el editor VIM para modificar la descripción del último commit
-		:i	% Para empezar a editar
+	git commit --amend		% Abre el editor VIM para modificar la descripción del último commit
+		:i		% Para empezar a editar
 		Se pulsa la tecla suprimir para borrar todo
 		Se pulsa la tecla escape para salir del modo edición
-		:i	% Para volver a editar
+		:i		% Para volver a editar
 		Se escribe la descripción deseada
 		Se pulsa la tecla enter
 		Se pulsa la tecla escape para salir del modo edición
-		:wq	% Guarda los cambios y sale del editor
+		:wq		% Guarda los cambios y sale del editor
+		:qa!	% Sale del editor sin guardar los cambios
+	git commit -m "Descripción de la Actualización" --amend		% Lo mismo sin abrir el editor VIM
 
 
 
+	git remote add origin LinkDelRepositorioGitHub.git		% Crea la direccion de un repositorio remoto (Repositorio GitHub) en el directorio de repositorios de git
+	git branch -M main
+	git push -u origin main									% Sube el contenido del Repositorio Local al Repositorio GitHub
 
+	git pull	% Proceso inverso a push. Baja el contenido del Repositorio GitHub al Repositorio Local
 
