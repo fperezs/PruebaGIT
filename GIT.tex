@@ -19,18 +19,24 @@ Primero: Abrir GIT Bash haciendo click derecho desde la carpeta del proyecto. Si
 
 
 	git init		% Inicia el seguimiento de GIT del proyecto, creando dos áreas: STAGING AREA o ÁREA DE ENSAYO: área temporal que indica que archivos está siguiendo GIT y en qué estado se encuentran
-					%																REPOSITORIO LOCAL: donde se almacenan las "instantáneas" de los archivos
+					%																REPOSITORIO LOCAL: donde se almacenan las "copias" de los archivos
 
-	git status -s	% Muestra el contenido de la carpeta, indicando con: "??" en rojo los archivos a los que no hace seguimiento
-					%													 "A" en verde los archivos a los que sí hace seguimiento (Agregado al Área de Ensayo)
+	git status -s	% Muestra el contenido de la carpeta que no esté en el Repositorio Local, indicando con: "??" en ROJO los archivos a los que no hace seguimiento
+					%																						 "A" en VERDE los archivos a los que sí hace seguimiento (Agregado al Área de Ensayo)
+					%																						 "M" en ROJO los archivos que han sido modificados (el contenido ha cambiado respecto a lo guardado en el Repositorio Local)
+					%																						 "M" en VERDE los archivos que han sido modificados y están en el Área de Ensayo
 
-	git add			% Añade el archivo al Área de Ensayo
+	git add Archivo.extensión	% Añade el archivo al Área de Ensayo
 
-	git commit		%  Añade el archivo al Repositorio Local desde el Área de Ensayo
+	git commit -m "Descripción de la Actualización"		%  Añade el archivo al Repositorio Local desde el Área de Ensayo, dándole el nombre deseado, que normalmente será una descripción de la actualización.
+	
+	Si es la primera vez que se hace el commit en el ordenador, pedirá un usuario y un mail:
+	git config --global user.username "Fernando"
+	git config --global user.email "f.perezs@alumnos.upm.es"
 
+	git log --oneline	% Muestra un listado de todas las copias (commit) del Repositorio Local
 
-
-
+	git reset --hard CódigoDeLaCopia	% Restaura el archivo deseado a la versión indicada por su código, y elimina del Repositorio Local todas las copias posteriores a esa
 
 
 
